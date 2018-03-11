@@ -1,12 +1,17 @@
 version: 2
 jobs:
-  test:
+  build:
     docker:
       - image: circleci/python:3.6.4
     steps:
       - checkout
       - run: pip install pipenv
       - run: pipenv install --dev
+  test:
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout
       - run: pipenv run python -m pytest --junitxml=.pytest/junit.xml
       - run: mv .pytest $CIRCLE_TEST_REPORTS/pytest
       - run: bash <(curl -s https://codecov.io/bash)
