@@ -5,7 +5,8 @@ jobs:
       - image: circleci/python:3.6.4
     steps:
       - checkout
-      - run: pip install --user pipenv
+      # https://github.com/pypa/pipenv/issues/1648
+      - run: pip install --user -e git+https://github.com/pypa/pipenv.git#egg=pipenv
       - run: python -m pipenv install --dev
       - run: python -m pipenv run python -m pytest --junitxml=.pytest/junit.xml
       - run: mv .pytest $CIRCLE_TEST_REPORTS/pytest
