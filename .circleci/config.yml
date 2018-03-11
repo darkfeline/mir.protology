@@ -10,5 +10,7 @@ jobs:
       - run: python -m pipenv install --dev
       - run: pwd; ls
       - run: python -m pipenv run python -m pytest --junitxml=.pytest/junit.xml
-      - run: mv .pytest $CIRCLE_TEST_REPORTS/pytest
+      - store_test_results:
+          path: .pytest
+#      - run: mv .pytest $CIRCLE_TEST_REPORTS/pytest
       - run: bash <(curl -s https://codecov.io/bash)
