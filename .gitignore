@@ -13,5 +13,4 @@ __pycache__/
 # Test artifacts
 /.pytest/
 /.cache/
-/.coverage
-/.coverage.*
+/coverage.xml
