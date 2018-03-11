@@ -22,19 +22,19 @@ Before running any other make command, run::
 
 To build an installable wheel, run::
 
-  $ make wheel
+  $ pipenv run make wheel
 
 To build a source distribution, run::
 
-  $ make sdist
+  $ pipenv run make sdist
 
 To run tests, run::
 
-  $ make check
+  $ pipenv run make check
 
 To build docs, run::
 
-  $ make html
+  $ pipenv run make html
 
 To build a TAGS file, run::
 

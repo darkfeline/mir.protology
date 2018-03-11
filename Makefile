@@ -1,4 +1,4 @@
-PYTHON := pipenv run python
+PYTHON := python
 export PYTHONPATH := $(CURDIR)
 
 .PHONY: all
