@@ -9,7 +9,7 @@ jobs:
       - run: pip install --user git+https://github.com/pypa/pipenv.git#egg=pipenv
       - run: python -m pipenv install --dev
       - run: pwd; ls
-      - run: python -m pipenv run python -m pytest --junitxml=.pytest/junit.xml
+      - run: python -m pipenv run python -m pytest --junitxml=.pytest/junit.xml --cov=./
       - store_test_results:
           path: .pytest
       - run: pip install --user codecov
