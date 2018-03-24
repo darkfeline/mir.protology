@@ -29,11 +29,6 @@ pydoc/%.html: $(wildcard mir/**/*.py)
 TAGS:
 	ctags -e -R mir
 
-.PHONY: distclean
-distclean:
-	rm -rf build dist pydoc *.egg-info
-	rm -f .coverage
-
 .PHONY: upload
 upload: sdist wheel
 	$(PYTHON) -m twine upload --skip-existing dist/*

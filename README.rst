@@ -39,7 +39,3 @@ To build docs, run::
 To build a TAGS file, run::
 
   $ make TAGS
-
-To clean up all built files, run::
-
-  $ make distclean
